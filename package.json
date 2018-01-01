@@ -1,0 +1,34 @@
+{
+  "name": "pentwi03",
+  "version": "0.1.0",
+  "description": "Javascript for experienced developers",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stk-pablo-gonzalez/PENTWI03.git"
+  },
+  "author": "Pablo Gonzalez (PAGR)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stk-pablo-gonzalez/PENTWI03/issues"
+  },
+  "homepage": "https://github.com/stk-pablo-gonzalez/PENTWI03#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "jasmine": "^2.8.0",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-karma": "^2.0.0",
+    "jasmine-core": "^2.8.0",
+    "karma": "^2.0.0",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-jasmine": "^1.1.1",
+    "karma-phantomjs-launcher": "^1.0.4"
+  }
+}
