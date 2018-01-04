@@ -1,0 +1,21 @@
+{
+  "name": "pentwi03",
+  "description": "Javascript for experienced developers",
+  "main": "index.js",
+  "authors": [
+    "Pablo Gonzalez (PAGR)"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/stk-pablo-gonzalez/PENTWI03",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
