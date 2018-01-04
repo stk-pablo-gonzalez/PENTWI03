@@ -25,7 +25,12 @@ function remove(productId, qty) {
     var productData = _findProduct(productId);
 
     if(productData.qty < qty) {
-        throw Error("Not enough existence in inventory.");
+        throw { 
+            message:"Not enough existence in inventory.",
+            data: {
+                productId: productId
+            }
+        };
     }
 
     productData.qty -= qty;
@@ -41,9 +46,16 @@ function getAll() {
     return _inventory;
 }
 
+function hasExistence(productId, qty) {
+    var productData = _findProduct(productId);
+    
+    return (productData.qty >= qty);
+}
+
 module.exports = {
     add: add,
     remove: remove,
     get: get,
-    getAll: getAll
+    getAll: getAll,
+    hasExistence: hasExistence
 };
