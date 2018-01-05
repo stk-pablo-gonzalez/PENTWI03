@@ -5,3 +5,4 @@ bower_components
 .DS_Store
 lib/
 www/js/lib
+www/css

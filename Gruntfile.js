@@ -7,9 +7,25 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: 'node_modules/jquery/dist',
+                        cwd: 'bower_components/jquery/dist',
                         src: 'jquery.min.js',
-                        dest: 'lib'
+                        dest: 'www/js/lib'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'bower_components/bootstrap/dist/js',
+                        src: 'bootstrap.min.js',
+                        dest: 'www/js/lib'
+                    }
+                ]
+            },
+            css: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'bower_components/bootstrap/dist/css',
+                        src: ['bootstrap-theme.min.css', 'bootstrap.min.css' ],
+                        dest: 'www/css'
                     }
                 ]
             }
