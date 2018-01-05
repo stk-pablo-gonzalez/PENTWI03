@@ -9,7 +9,7 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: 'bower_components/jquery/dist',
                         src: 'jquery.min.js',
-                        dest: 'www/js/lib'
+                        dest: 'www/static/js/lib'
                     }
                 ]
             },
@@ -19,19 +19,19 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: 'bower_components/bootstrap/dist/css',
                         src: ['bootstrap-theme.min.css', 'bootstrap.min.css' ],
-                        dest: 'www/static'
+                        dest: 'www/static/css'
                     },
                     {
                         expand: true,
                         cwd: 'bower_components/bootstrap/dist/js',
                         src: 'bootstrap.min.js',
-                        dest: 'www/js/lib'
+                        dest: 'www/static/js/lib'
                     },
                     {
                         expand: true,
                         cwd: 'bower_components/bootstrap/dist/fonts',
                         src: '*.*',
-                        dest: 'www/static'
+                        dest: 'www/static/fonts'
                     }
                 ]
             }
@@ -59,7 +59,7 @@ module.exports = function(grunt) {
     //Tasks
     grunt.registerTask('test', ['copy', 'karma']);
     grunt.registerTask('start', ['copy', 'shell']);
-    
+
     //Default tasks
 
 }
