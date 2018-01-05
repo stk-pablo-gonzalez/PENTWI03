@@ -3,29 +3,35 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         copy: {
-            js: {
+            jquery: {
                 files: [
                     {
                         expand: true,
                         cwd: 'bower_components/jquery/dist',
                         src: 'jquery.min.js',
                         dest: 'www/js/lib'
+                    }
+                ]
+            },
+            bootstrap: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'bower_components/bootstrap/dist/css',
+                        src: ['bootstrap-theme.min.css', 'bootstrap.min.css' ],
+                        dest: 'www/static'
                     },
                     {
                         expand: true,
                         cwd: 'bower_components/bootstrap/dist/js',
                         src: 'bootstrap.min.js',
                         dest: 'www/js/lib'
-                    }
-                ]
-            },
-            css: {
-                files: [
+                    },
                     {
                         expand: true,
-                        cwd: 'bower_components/bootstrap/dist/css',
-                        src: ['bootstrap-theme.min.css', 'bootstrap.min.css' ],
-                        dest: 'www/css'
+                        cwd: 'bower_components/bootstrap/dist/fonts',
+                        src: '*.*',
+                        dest: 'www/static'
                     }
                 ]
             }
