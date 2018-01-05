@@ -1,7 +1,7 @@
 {
   "name": "pentwi03",
   "description": "Javascript for experienced developers",
-  "main": "index.js",
+  "main": "app.js",
   "authors": [
     "Pablo Gonzalez (PAGR)"
   ],

@@ -40,15 +40,25 @@ module.exports = function(grunt) {
             unit: {
                 configFile: 'karma.conf.js'
             }
+        },
+        shell: {
+            launch: {
+                options: {
+                    stdout: true
+                },
+                command: 'node app.js'
+            }
         }
     });
 
     //Load plugins
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-shell');
     
     //Tasks
     grunt.registerTask('test', ['copy', 'karma']);
+    grunt.registerTask('start', ['copy', 'shell']);
     
     //Default tasks
 
