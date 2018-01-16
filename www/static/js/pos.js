@@ -2,10 +2,6 @@
 // Provides UI functionality for POS solution
 
 $(document).ready(function() {
-    var ticket = {
-        items: [],
-        totalAmount: 0.0
-    };
     var posWorker = new Worker('js/posWorker.js');
 
     posWorker.addEventListener('message', function(e) {
@@ -57,22 +53,7 @@ $(document).ready(function() {
             code: code,
             qty: qty
         });
-        /*
-        getProduct(code).then(function(product) {
-           alert(product.id + ' ' + product.desc);
-           var item = {
-                id: product.id,
-                desc: product.desc,
-                price: product.price,
-                qty: qty
-            };
-            
-            ticket.items.push(item);
-            ticket.totalAmount += item.qty * item.price;
-            showLineItem(item);
-            showTotal();
-        });
-        */
+
         clearAndFocus();
     }
 
@@ -101,14 +82,4 @@ $(document).ready(function() {
         $('#detail tbody').empty();
         showTotal(0.0);
     }
-
-    /*
-    function getProduct(code) {
-        return $.ajax({
-            url: 'api/products/' + code,
-            dataType: 'json',
-            method: 'GET'
-        });
-    }
-    */
 });
