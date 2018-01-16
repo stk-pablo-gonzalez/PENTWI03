@@ -8,6 +8,24 @@ $(document).ready(function() {
     };
     var posWorker = new Worker('js/posWorker.js');
 
+    posWorker.addEventListener('message', function(e) {
+        var message = e.data;
+
+        if(message.action === 'addItem') {
+            if(message.success) {
+                showLineItem(message.item);
+                showTotal(message.totalAmount);
+            } else {
+                alert(message.message);
+            }
+        } else if(message.action === 'saveTicket') {
+            if(message.success) {
+                alert('Ticket saved!');
+                resetAll();
+            }
+        }
+    })
+
     $('#code').keypress(function(e) {
         if(e.which === 13) {
             addLineItem();
@@ -19,7 +37,9 @@ $(document).ready(function() {
     });
 
     $('#confirm').click(function(e) {
-        alert('confirm');
+        posWorker.postMessage({
+            action: 'saveTicket'
+        });
     });
 
     function removeItem(id) {
@@ -37,6 +57,7 @@ $(document).ready(function() {
             code: code,
             qty: qty
         });
+        /*
         getProduct(code).then(function(product) {
            alert(product.id + ' ' + product.desc);
            var item = {
@@ -51,7 +72,7 @@ $(document).ready(function() {
             showLineItem(item);
             showTotal();
         });
-
+        */
         clearAndFocus();
     }
 
@@ -66,8 +87,8 @@ $(document).ready(function() {
         $('#detail tbody').append(innerHtml);
     }
 
-    function showTotal() {
-        $('#total h3').text('$ ' + ticket.totalAmount);
+    function showTotal(amount) {
+        $('#total h3').text('$ ' + amount);
     }
 
     function clearAndFocus() {
@@ -75,6 +96,13 @@ $(document).ready(function() {
         $('#code').focus();
     }
 
+    function resetAll() {
+        clearAndFocus();
+        $('#detail tbody').empty();
+        showTotal(0.0);
+    }
+
+    /*
     function getProduct(code) {
         return $.ajax({
             url: 'api/products/' + code,
@@ -82,4 +110,5 @@ $(document).ready(function() {
             method: 'GET'
         });
     }
+    */
 });

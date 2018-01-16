@@ -102,7 +102,7 @@ function postJson(url, obj, success, error) {
         if(xhr.status >= 400 && xhr.status <= 503) {
             error({
                 status: xhr.status,
-                response = xhr.responseText
+                response: xhr.responseText
             });
         }
 
