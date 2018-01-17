@@ -12,17 +12,17 @@ This project requires the following to be installed:
   * Bower
   * Grunt
 
-## Installation Instructors
+## Installation Instructions
 First install dependencies:
-    ```shell
-    $ npm install
-    $ bower install
-    ```
+```sh
+$ npm install
+$ bower install
+```
 
 Then use grunt to start the server:
-    ```shell
-    $ grunt start
-    ```
+```sh
+$ grunt start
+```
 
 Open a browser to open:
   * Simple POS: *http://localhost:8080/pos.html*
