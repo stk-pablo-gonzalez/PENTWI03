@@ -19,7 +19,8 @@
   "dependencies": {
     "express": "^4.16.2",
     "jasmine": "^2.8.0",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "ws": "^4.0.0"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
@@ -30,7 +31,6 @@
     "karma": "^2.0.0",
     "karma-firefox-launcher": "^1.1.0",
     "karma-jasmine": "^1.1.1",
-    "karma-phantomjs-launcher": "^1.0.4",
-    "socket.io": "^2.0.4"
+    "karma-phantomjs-launcher": "^1.0.4"
   }
 }

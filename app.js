@@ -1,11 +1,11 @@
-var port = 8080;
+const port = 8080;
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
-var server = require('http').Server(app);
+var server = require('http').createServer(app);
 
-var io = require('socket.io')(server);
+const WebSocket = require('ws');
 
 //io.listen(server);
 
@@ -17,7 +17,7 @@ app.use(express.static(__dirname + '/www/static'));
 app.use(bodyParser.json());
 
 //GET /
-app.get('/', function(request, response) {
+app.get('/pos', function(request, response) {
     //response.redirect('pos.html');
     response.sendFile(path.join(__dirname + '/www/pos.html'));
 });
@@ -32,10 +32,11 @@ app.use('/api/sales', sales);
 //Chat service
 var usernames = {};
 
-io.on('connection', function(socket) {
+var ws = new WebSocket.Server({ server });
+ws.on('connection', function(socket) {
     console.log('a user connected.');
 });
 
-server.listen(port);
-
-console.log('Listening on port: ' + port);
+server.listen(port, function() {
+    console.log('Listening on port: ' + port);
+});

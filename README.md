@@ -25,5 +25,5 @@ $ grunt start
 ```
 
 Open a browser to open:
-  * Simple POS: *http://localhost:8080/pos.html*
-  * Chat: *http://localhost:8080/chat.html*
+  * Simple POS: *http://localhost:8080/pos*
+  * Chat: *http://localhost:8080/chat*

@@ -8,7 +8,7 @@ $(document).ready(function() {
 });
 
 function checkSupported() {
-    if(window.webSocket) {
+    if(window.webSocket || WebSocket) {
         console.log('WebSockets supported!');
         return true;
     } else {
@@ -20,15 +20,15 @@ function checkSupported() {
 function connect() {
     webSocket = new WebSocket(wsUri);
     webSocket.onopen = function(e) {
-        onOpen(e);
+        console.log('CONNECTED');
     };
     webSocket.onclose = function(e) {
-        onClose(e);
+        console.log('DISCONNECTED');
     };
     webSocket.onmessage = function(e) {
-        onMessage(e);
+        console.log('RESPONSE: ' + e.data);
     };
     webSocket.onerror = function(e) {
-        onError(e);
+        console.log('ERROR: ' + e.data);
     }
 }
