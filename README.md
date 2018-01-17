@@ -14,11 +14,15 @@ This project requires the following to be installed:
 
 ## Installation Instructors
 First install dependencies:
-    > $ npm install
-    > $ bower install
+    ```shell
+    $ npm install
+    $ bower install
+    ```
 
 Then use grunt to start the server:
-    > $ grunt start
+    ```shell
+    $ grunt start
+    ```
 
 Open a browser to open:
   * Simple POS: *http://localhost:8080/pos.html*
