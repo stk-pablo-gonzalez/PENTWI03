@@ -35,6 +35,15 @@ var usernames = {};
 var ws = new WebSocket.Server({ server });
 ws.on('connection', function(socket) {
     console.log('a user connected.');
+    socket.on('message', function(data) {
+        console.log('received: ' + data);
+        ws.clients.forEach(function(client) {
+            if(client.readyState === WebSocket.OPEN) {
+                console.log('SENT (' + client.id + '): ' + data);
+                client.send(data);
+            }
+        })
+    });
 });
 
 server.listen(port, function() {
